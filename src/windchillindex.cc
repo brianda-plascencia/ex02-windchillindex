@@ -6,7 +6,7 @@ namespace edu {
 			namespace csv13 {
 				double computeWindChillIndex(double temperature, double windVelocity) {
 					double w;
-					if (temperature <= 10) return -1;
+					if (temperature > 10) return -1;
 					w = 33.0 - ((10.0 * sqrt(windVelocity) - windVelocity) * (33.0 - temperature)) / 23.1;
 					return w;
 				}
