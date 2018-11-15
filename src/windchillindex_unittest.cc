@@ -45,7 +45,7 @@
 namespace {
 
 double computeWindChillIndexMaster(double temperature, double windVelocity) {
-    if (temperature > 10.0) return FLT_MIN;
+    if (temperature > 10.0) return -1.0;
 
     return 33.0 - ((10.0 * sqrt(windVelocity) - windVelocity) * (33.0 - temperature)) / 23.1;
 }
@@ -60,7 +60,7 @@ using std::string;
 
 using namespace ::testing_internal;
 
-typedef uint64_t unit;
+typedef uint64_t uint;
 
 class WindChillIndexTest : public ::testing::Test {
 protected:
